@@ -14,8 +14,7 @@ from sklearn.preprocessing import MinMaxScaler
 numIter = 10  # Number of iterations
 percentEachGroup = 20  # Percentage of members for each group
 base = 0.0001
-# dataset = ['2000', '4000', '6000', '8000', '10000']# 
-dataset = ["10000"]
+dataset = ["twitch"]
 approx = 0.5
 
 
@@ -65,31 +64,20 @@ def extract_constraints_real(file_path):
 
 
 ############## real-world dataset/ approximation ratio #####################
-# offline use .npz
 def Simu_approx(iterN):
     epsilon = 0.05
     for r in range(len(dataset)):
-        for group_n in range(2, 11, 2):
+        for group_n in range(1):
             for i_iter in range(iterN):
-                PATH = "/Users/jcq/Desktop/FKC_code/ICLR2026/first/dataset/klein_m/klein_m_output_" + dataset[
-                    r] + f"_{i_iter}_{group_n}.csv"
-                counts_m = extract_constraints(PATH_oo_constrain_file, PATH)
-                # PATH_G = "/Users/jcq/Desktop/WWW/dataset/run_experiement_data/" + dataset[r] + "/" + dataset[
-                #     # r] + "_group.csv"
-                # counts_m = extract_constraints_real(PATH_G)
+                PATH = "Dataset/" + dataset[r] + f"_norm.csv"
+                # counts_m = extract_constraints(PATH_oo_constrain_file, PATH)
+                counts_m = extract_constraints_real(PATH_G)
                 totalTime = []
                 totalLoss = []
                 # constraints = [math.ceil(x / sum(counts_m) * percentEachGroup) for x in counts_m] 
                 constraints = counts_m
                 print(constraints)
-                # PATH = PATH_oo
-                # PATH = "/Users/jcq/Desktop/FKC_code/ICLR2026/first/dataset/klein/klein_output_" + dataset[
-                #     r] + f"_{i_iter}.csv"
-                # PATH_G = "/Users/jcq/Desktop/FKC_code/ICLR2026/first/dataset/klein/klein_output_" + dataset[
-                #     r] + f"_{i_iter}.npz"
 
-       
-                # # # # # # '1+2√3-Approx',
                 start = time()
                 C =  one_two_sqrt_three_m_Approx(constraints, epsilon, PATH, PATH)
                 
@@ -109,8 +97,7 @@ def Simu_approx(iterN):
 
                 data = {
                     'dataset': dataset[r],
-                    'alg': ["7-Approx"],
-                    # '1+√3-Approx','3+3√3-Approx',,'5-ApproxB','1+2√3-Approx'，,'two pass (3-Approx)'
+                    'alg': ["1+2√3-Approx"],
                     'approx': totalLoss,
                     'runtime': totalTime,
                     'm': len(constraints),
@@ -120,7 +107,7 @@ def Simu_approx(iterN):
 
                 df = pd.DataFrame(data)
 
-                file_exists = os.path.isfile('output/simu_data_exp_m_test.csv')
-                df.to_csv('output/simu_data_exp_m_test.csv', mode='a', index=False, header=not file_exists)
+                file_exists = os.path.isfile('output/test.csv')
+                df.to_csv('output/test.csv', mode='a', index=False, header=not file_exists)
 
 Simu_approx(numIter)
