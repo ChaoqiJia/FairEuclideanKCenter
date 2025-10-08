@@ -75,8 +75,8 @@ def Simu_approx(iterN):
                 counts_m = extract_constraints_real(PATH_G)
                 totalTime = []
                 totalLoss = []
-                # constraints = [math.ceil(x / sum(counts_m) * percentEachGroup) for x in counts_m] 
-                constraints = counts_m
+                constraints = [math.ceil(x / sum(counts_m) * percentEachGroup) for x in counts_m] 
+                # constraints = counts_m
                 print(constraints)
 
                 start = time()
