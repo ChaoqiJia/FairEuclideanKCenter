@@ -70,6 +70,7 @@ def Simu_approx(iterN):
         for group_n in range(1):
             for i_iter in range(iterN):
                 PATH = "Dataset/" + dataset[r] + f"_norm.csv"
+                PATH_G = "Dataset/" + dataset[r] + f"_group.csv"
                 # counts_m = extract_constraints(PATH_oo_constrain_file, PATH)
                 counts_m = extract_constraints_real(PATH_G)
                 totalTime = []
@@ -79,7 +80,7 @@ def Simu_approx(iterN):
                 print(constraints)
 
                 start = time()
-                C =  one_two_sqrt_three_m_Approx(constraints, epsilon, PATH, PATH)
+                C =  one_two_sqrt_three_m_Approx(constraints, epsilon, PATH, PATH_G)
                 
                 totalTime.append(time() - start)
                 max_cost = 0
