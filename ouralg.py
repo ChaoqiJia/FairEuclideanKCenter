@@ -52,16 +52,16 @@ def streamingAlg(constraints, epsilon, PATH, PATH_G, metric='euclidean'):
     R_dict = dict()
     save_center = [[] for _ in range(m)]
     csv_filename = PATH
-    # group_file = open(PATH_G, 'r')
-    # next(group_file)
+    group_file = open(PATH_G, 'r')
+    next(group_file)
     with open(csv_filename, 'r') as csvfile:
         csv_reader = csv.reader(csvfile)
         next(csv_reader)
         for row in csv_reader:
-            Y = int(row[-1])
-            # Y = int(group_file.readline().strip())
-            X = np.array(row[:-1], dtype=float)
-            # X = np.array(row, dtype=float)
+            # Y = int(row[-1])
+            Y = int(group_file.readline().strip())
+            # X = np.array(row[:-1], dtype=float)
+            X = np.array(row, dtype=float)
             if isinstance(Gamma_init_X[Y], int):
                 Gamma_init_X[Y] = X
                 print()
