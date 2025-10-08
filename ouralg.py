@@ -174,8 +174,6 @@ def one_two_sqrt_three_m_Approx(constraints, epsilon, PATH, PATH_G, metric='eucl
                                 break
 
                     for i in range(m):
-                        print(f"!: {i} ")
-                        print(len(fd_value_copy[i]))
                         for item in fd_value_copy[i]:
                             if min_metric(item, sum(Psi, []), metric) > fd * 2:
                                 Psi[i].append(item)
