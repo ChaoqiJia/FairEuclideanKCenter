@@ -1,5 +1,5 @@
 
-# Fair k-Center Clustering on Data Streams
+# Fair k-Center Clustering on Massive Social Network Data Streams
 
   ## Data preprocessing 
   - Feature file: contains all the features of the records.
