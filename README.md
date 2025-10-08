@@ -4,6 +4,7 @@
   ## Data preprocessing 
   - Feature file: contains all the features of the records.
   - Group file: specifies the corresponding group of each record for the fairness attribute.
+    (we use dataset _twitch_ as an example)
   
   ## Run the code 
   - Python version: 3.8
