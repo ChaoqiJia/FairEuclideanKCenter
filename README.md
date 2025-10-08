@@ -9,8 +9,8 @@
   ## Run the code 
   - Python version: 3.8
   > - run_simu_approx.sh
->   - chmod +x run_fkc.sh\\
->   - ./run_fkc.sh\\
+  > - chmod +x run_fkc.sh\\
+  > - ./run_fkc.sh\\
 
   #### Plot the output
 
