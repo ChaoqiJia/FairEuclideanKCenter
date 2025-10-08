@@ -48,7 +48,7 @@ def extract_constraints(file_path, target_filename):
             if match:
                 path = match.group('path').strip()
                 constraints_str = match.group('constraints').strip()
-                if target_filename.__contains__(path)
+                if target_filename.__contains__(path):
                     constraints = [int(num) for num in constraints_str.split()]
                     break
                     # constraints_list.extend(constraints)
