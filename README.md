@@ -1,1 +1,17 @@
 # FairEuclideanKCenter
+
+# Fair k-Center Clustering on Data Streams
+
+  ## Data preprocessing 
+  - Feature file: contains all the features of the records.
+  - Group file: specifies the corresponding group of each record for the fairness attribute.
+  
+  ## Run the code 
+  - Python version: 3.8
+  > - run_simu_approx.sh
+>   - chmod +x run_simu_approx.sh\\
+>   - ./run_simu_approx.sh\\
+
+  #### Plot the output
+
+  - Use the Cost and runtime to calculate the clustering utility. 
