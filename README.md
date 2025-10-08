@@ -1,4 +1,3 @@
-# FairEuclideanKCenter
 
 # Fair k-Center Clustering on Data Streams
 
@@ -8,8 +7,8 @@
   
   ## Run the code 
   - Python version: 3.8
-  > - chmod +x run_fkc.sh\\
-  > - ./run_fkc.sh\\
+  > - chmod +x run_fkc.sh
+  > - ./run_fkc.sh
 
   #### Plot the output
 
