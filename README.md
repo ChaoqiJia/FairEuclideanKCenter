@@ -14,3 +14,5 @@
   #### Plot the output
 
   - Use the Cost and runtime to calculate the clustering utility. 
+
+[![DOI](https://zenodo.org/badge/1064476673.svg)](https://doi.org/10.5281/zenodo.18369079)
